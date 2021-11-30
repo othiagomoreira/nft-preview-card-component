@@ -1,0 +1,87 @@
+@use '../util' as *;
+
+.card {
+    background-color: var(--card-bg);
+    padding: rem(20);
+    border-radius: rem(16);
+    max-width: rem(370);
+    @include breakpoint(medium) {
+        padding: rem(25);
+    }
+
+    &__image {
+        position: relative;
+        border-radius: rem(10);
+        overflow: hidden;
+
+        .card__link--view {
+            background-color: hsl(178, 100%, 50%, .6);
+            @include flex(center);
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 0; //Hover 100%
+            overflow: hidden;
+        }
+
+        &:hover {
+            .card__link--view {
+                height: 100%;
+            }
+        }
+    }
+
+    &__title {
+        font-size: rem(24);
+        font-weight: 600;
+        margin-top: rem(16);
+    }
+
+    &__description {
+        color: var(--color-text);
+        font-size: var(--font-medium);
+        font-weight: 300;
+        line-height: 1.5;
+        margin: rem(16) 0;
+    }
+
+    &__cryptocurrency {
+        @include flex(space-between);
+        padding-bottom: rem(15);
+        border-bottom: 1px solid var(--line);
+
+        &--div {
+            @include flex(center);
+            gap: rem(7);
+
+            .card__eth {
+                color: var(--link-hover);
+                font-weight: 600;
+            }
+
+            .card__time {
+                color: var(--color-text);
+            }
+        }
+    }
+
+    &__profile {
+        @include flex(flex-start);
+        gap: rem(10);
+        margin-top: rem(16);
+
+        .card__avatar {
+            width: rem(30);
+            border-radius: 50%;
+            border: 1px solid var(--white);
+        }
+
+        .card__subtitle {
+            color: var(--color-text);
+            font-size: rem(16);
+            font-weight: normal;
+        }
+    }
+}

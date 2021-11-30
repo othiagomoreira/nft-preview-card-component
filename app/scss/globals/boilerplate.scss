@@ -1,0 +1,41 @@
+@use '../util/' as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: var(--font-body);
+}
+
+img {
+	max-width: 100%;
+	display: block
+}
+
+.container {
+	min-height: 100vh;
+	background-color: var(--container-bg);
+	@include flex(center);
+	padding: rem(24);
+
+	@include breakpoint(medium) {
+		padding: 0;
+	}
+}
+
+.card__link {
+	text-decoration: none;
+	color: var(--white);
+	transition: all ease .5s;
+}
+
+.card__link:hover{
+	color: var(--link-hover);
+}
