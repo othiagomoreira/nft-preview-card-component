@@ -16,8 +16,8 @@
 
         &::before {
             position: absolute;
-            background-color: hsl(178, 100%, 50%, .6);
-            content: url(/images/icon-view.svg);
+            background-color: hsl(178, 100%, 50%, 0.6);
+            content: url(../images/icon-view.svg);
             bottom: 0;
             right: 0;
             width: 100%;
@@ -27,7 +27,7 @@
             @include flex(center);
             overflow: hidden;
             cursor: pointer;
-            transition: all ease .5s;
+            transition: all ease 0.5s;
         }
 
         &:hover {
